@@ -30,6 +30,24 @@
             formContainer.classList.toggle('hidden');
         }
 
+        function printSpilGaji() {
+        // Implement your print functionality here
+        const month = document.getElementById('month').value;
+        const year = document.getElementById('year').value;
+
+        // This is just a placeholder for the actual print logic
+        alert(`Mencetak spill gaji untuk bulan ${month} tahun ${year}`);
+        }
+
+        function printLaporan() {
+        const reportType = document.getElementById('reportType').value;
+        const month = document.getElementById('month').value;
+        const year = document.getElementById('year').value;
+
+        // This is just a placeholder for the actual print logic
+        alert(`Mencetak ${reportType} untuk bulan ${month} tahun ${year}`);
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             showPage('dashboardPage', 'dashboardMenu'); // Show dashboard by default
         });
@@ -113,6 +131,33 @@
                                 </a>
                             </li>
                         </ul>
+                        <p class="font-semibold text-gray-700 mt-4 mb-2">MENU PENGAJIAN</p>
+                        <ul>
+                        <li class="mb-2">
+                            <a id="spilGajiMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded"
+                            href="#" onclick="showPage('spilGajiPage', 'spilGajiMenu')">
+                                <i class="fas fa-money-bill-wave mr-2"></i>
+                                Spil Gaji
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a id="cetakSpilGajiMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded"
+                            href="#" onclick="showPage('cetakSpilGajiPage', 'cetakSpilGajiMenu')">
+                                <i class="fas fa-print mr-2"></i>
+                                Cetak Spil Gaji
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="font-semibold text-gray-700 mt-4 mb-2">MENU LAPORAN</p>
+                    <ul>
+                        <li class="mb-2">
+                            <a id="cetakLaporanMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded"
+                            href="#" onclick="showPage('cetakLaporanPage', 'cetakLaporanMenu')">
+                                <i class="fas fa-file-alt mr-2"></i>
+                                Cetak Laporan
+                            </a>
+                        </li>
+                    </ul>
                     </nav>
                 </div>
             </div>
@@ -400,6 +445,134 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+
+            <!-- Spil Gaji Page -->
+            <div id="spilGajiPage" class="page p-6 hidden">
+                <div class="bg-blue-600 text-white p-6 rounded-lg shadow-md mb-6">
+                    <h1 class="text-2xl font-bold">Data Spil Gaji</h1>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white shadow-md rounded">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">No</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Nama Karyawan</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Jabatan</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Divisi</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Gaji Pokok</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Potongan</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Gaji Bersih</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 px-4 border">1</td>
+                                <td class="py-2 px-4 border">Andi Wijaya</td>
+                                <td class="py-2 px-4 border">Manager</td>
+                                <td class="py-2 px-4 border">Keuangan</td>
+                                <td class="py-2 px-4 border">Rp 10.000.000</td>
+                                <td class="py-2 px-4 border">Rp 1.000.000</td>
+                                <td class="py-2 px-4 border">Rp 9.000.000</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">2</td>
+                                <td class="py-2 px-4 border">Siti Rahmawati</td>
+                                <td class="py-2 px-4 border">Supervisor</td>
+                                <td class="py-2 px-4 border">Pemasaran</td>
+                                <td class="py-2 px-4 border">Rp 8.000.000</td>
+                                <td class="py-2 px-4 border">Rp 800.000</td>
+                                <td class="py-2 px-4 border">Rp 7.200.000</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">3</td>
+                                <td class="py-2 px-4 border">Budi Santoso</td>
+                                <td class="py-2 px-4 border">Staff</td>
+                                <td class="py-2 px-4 border">Operasional</td>
+                                <td class="py-2 px-4 border">Rp 5.000.000</td>
+                                <td class="py-2 px-4 border">Rp 500.000</td>
+                                <td class="py-2 px-4 border">Rp 4.500.000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Cetak Spil Gaji Page -->
+            <div id="cetakSpilGajiPage" class="page p-6 hidden">
+                <div class="bg-blue-600 text-white p-6 rounded-lg shadow-md mb-6">
+                    <h1 class="text-2xl font-bold">Cetak Spil Gaji</h1>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-semibold mb-2" for="month">Pilih Bulan:</label>
+                    <select id="month" class="block w-full border border-gray-300 rounded p-2">
+                        <option value="1">Januari</option>
+                        <option value="2">Februari</option>
+                        <option value="3">Maret</option>
+                        <option value="4">April</option>
+                        <option value="5">Mei</option>
+                        <option value="6">Juni</option>
+                        <option value="7">Juli</option>
+                        <option value="8">Agustus</option>
+                        <option value="9">September</option>
+                        <option value="10">Oktober</option>
+                        <option value="11">November</option>
+                        <option value="12">Desember</option>
+                    </select>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-semibold mb-2" for="year">Pilih Tahun:</label>
+                    <input type="number" id="year" class="block w-full border border-gray-300 rounded p-2" placeholder="Contoh: 2023" />
+                </div>
+                
+                <button class="bg-blue-600 text-white rounded p-2 hover:bg-blue-700" onclick="printSpilGaji()">
+                    Cetak Spil Gaji
+                </button>
+            </div>
+
+            <!-- Cetak Laporan Page -->
+            <div id="cetakLaporanPage" class="page p-6 hidden">
+                <div class="bg-blue-600 text-white p-6 rounded-lg shadow-md mb-6">
+                    <h1 class="text-2xl font-bold">Cetak Laporan</h1>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-semibold mb-2" for="reportType">Pilih Tipe Laporan:</label>
+                    <select id="reportType" class="block w-full border border-gray-300 rounded p-2">
+                        <option value="karyawan">Laporan Karyawan</option>
+                        <option value="absensi">Laporan Absensi</option>
+                        <option value="gaji">Laporan Gaji</option>
+                        <!-- Add more report types as needed -->
+                    </select>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-semibold mb-2" for="month">Pilih Bulan:</label>
+                    <select id="month" class="block w-full border border-gray-300 rounded p-2">
+                        <option value="1">Januari</option>
+                        <option value="2">Februari</option>
+                        <option value="3">Maret</option>
+                        <option value="4">April</option>
+                        <option value="5">Mei</option>
+                        <option value="6">Juni</option>
+                        <option value="7">Juli</option>
+                        <option value="8">Agustus</option>
+                        <option value="9">September</option>
+                        <option value="10">Oktober</option>
+                        <option value="11">November</option>
+                        <option value="12">Desember</option>
+                    </select>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-semibold mb-2" for="year">Pilih Tahun:</label>
+                    <input type="number" id="year" class="block w-full border border-gray-300 rounded p-2" placeholder="Contoh: 2023" />
+                </div>
+                
+                <button class="bg-blue-600 text-white rounded p-2 hover:bg-blue-700" onclick="printLaporan()">
+                    Cetak Laporan
+                </button>
             </div>
 
             <!-- PROFIL Page -->
