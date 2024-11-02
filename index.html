@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('hidden');
+        }
+
+        function highlightMenu(menuItemId) {
+            const menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(item => item.classList.remove('bg-blue-500', 'text-white'));
+            const selectedItem = document.getElementById(menuItemId);
+            selectedItem.classList.add('bg-blue-500', 'text-white');
+        }
+
+        function showPage(pageId, menuItemId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.add('hidden'));
+            document.getElementById(pageId).classList.remove('hidden');
+            highlightMenu(menuItemId);
+        }
+
+        function toggleForm() {
+            const formContainer = document.getElementById('form-container');
+            formContainer.classList.toggle('hidden');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('dashboardPage', 'dashboardMenu'); // Show dashboard by default
+        });
+    </script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <div class="w-64 bg-white min-h-screen shadow-md flex flex-col justify-between" id="sidebar">
+            <div>
+                <div class="p-4 flex items-center">
+                    <img alt="University Logo" class="w-10 h-10 mr-2" height="50" src="NU.png" width="50" />
+                    <div>
+                        <h1 class="text-lg font-bold">UNIVERSITAS PAMULANG</h1>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="flex items-center mb-4">
+                        <img alt="User Avatar" class="w-10 h-10 rounded-full mr-2" height="50" src="nudin.jpeg" width="50" />
+                        <div>
+                            <p class="font-semibold">Welcome, SATINUDIN TELAUMBANUA</p>
+                            <p class="text-sm text-gray-500">Administrator</p>
+                        </div>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li class="mb-2">
+                                <a id="dashboardMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded"
+                                   href="#" onclick="showPage('dashboardPage', 'dashboardMenu')">
+                                    <i class="fas fa-tachometer-alt mr-2"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="font-semibold text-gray-700 mt-4 mb-2">MENU KARYAWAN</p>
+                        <ul>
+                            <li class="mb-2">
+                                <a id="karyawanMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded"
+                                   href="#" onclick="showPage('karyawanPage', 'karyawanMenu')">
+                                    <i class="fas fa-users mr-2"></i>
+                                    Karyawan
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a id="jabatanMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded"
+                                   href="#" onclick="showPage('jabatanPage', 'jabatanMenu')">
+                                    <i class="fas fa-briefcase mr-2"></i>
+                                    Jabatan
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a id="divisiMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded"
+                                   href="#" onclick="showPage('divisiPage', 'divisiMenu')">
+                                    <i class="fas fa-building mr-2"></i>
+                                    Divisi
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="font-semibold text-gray-700 mt-4 mb-2">MENU ABSENSI</p>
+                        <ul>
+                            <li class="mb-2">
+                                <a id="absensiMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded"
+                                   href="#" onclick="showPage('absensiPage', 'absensiMenu')">
+                                    <i class="fas fa-calendar-check mr-2"></i>
+                                    Absensi
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a id="izinMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded"
+                                   href="#" onclick="showPage('izinPage', 'izinMenu')">
+                                    <i class="fas fa-file-alt mr-2"></i>
+                                    Izin
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a id="lemburMenu" class="menu-item flex items-center p-2 text-gray-700 hover:bg-gray-200 rounded"
+                                   href="#" onclick="showPage('lemburPage', 'lemburMenu')">
+                                    <i class="fas fa-clock mr-2"></i>
+                                    Lembur
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="p-4">
+                <button class="w-full bg-red-500 text-white p-2 rounded">
+                    <i class="fas fa-sign-out-alt mr-2"></i>
+                    Logout
+                </button>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="flex-1">
+            <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+                <button class="bg-blue-500 text-white p-2 rounded" onclick="toggleSidebar()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="flex items-center cursor-pointer" onclick="toggleForm()">
+                    <p class="mr-4">Welcome, SATINUDI TELAUMBANUA</p>
+                    <img alt="User Avatar" class="w-10 h-10 rounded-full" height="50" src="nudin.jpeg" width="50" />
+                </div>
+            </div>
+            
+            <!-- Dashboard Page -->
+            <div id="dashboardPage" class="page p-6">
+                <div class="bg-blue-600 text-white p-6 rounded-lg shadow-md mb-6">
+                    <h1 class="text-2xl font-bold">Sistem Informasi Manajemen Karyawan</h1>
+                    <p class="text-lg">Admin Dashboard</p>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-white rounded-lg shadow-md p-4">
+                        <div class="flex justify-between">
+                            <div>
+                                <h6 class="font-semibold text-gray-600">Total Karyawan</h6>
+                                <h2 class="text-2xl font-bold">150</h2>
+                            </div>
+                            <i class="fas fa-users fa-2x text-primary"></i>
+                        </div>
+                    </div>
+            
+                    <div class="bg-white rounded-lg shadow-md p-4">
+                        <div class="flex justify-between">
+                            <div>
+                                <h6 class="font-semibold text-gray-600">Hadir Hari Ini</h6>
+                                <h2 class="text-2xl font-bold">142</h2>
+                            </div>
+                            <i class="fas fa-calendar-check fa-2x text-success"></i>
+                        </div>
+                    </div>
+            
+                    <div class="bg-white rounded-lg shadow-md p-4">
+                        <div class="flex justify-between">
+                            <div>
+                                <h6 class="font-semibold text-gray-600">Izin/Cuti</h6>
+                                <h2 class="text-2xl font-bold">5</h2>
+                            </div>
+                            <i class="fas fa-file-alt fa-2x text-warning"></i>
+                        </div>
+                    </div>
+            
+                    <div class="bg-white rounded-lg shadow-md p-4">
+                        <div class="flex justify-between">
+                            <div>
+                                <h6 class="font-semibold text-gray-600">Lembur</h6>
+                                <h2 class="text-2xl font-bold">8</h2>
+                            </div>
+                            <i class="fas fa-clock fa-2x text-danger"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Karyawan Page -->
+            <div id="karyawanPage" class="page p-6 hidden">
+                <div class="bg-blue-600 text-white p-6 rounded-lg shadow-md mb-6">
+                    <h1 class="text-2xl font-bold">Data Karyawan</h1>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white shadow-md rounded">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">No</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Nama</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Jabatan</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Divisi</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Gaji</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 px-4 border">1</td>
+                                <td class="py-2 px-4 border">Andi Wijaya</td>
+                                <td class="py-2 px-4 border">Manager</td>
+                                <td class="py-2 px-4 border">Keuangan</td>
+                                <td class="py-2 px-4 border">Rp 10.000.000</td>
+                                <td class="py-2 px-4 border">Aktif</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">2</td>
+                                <td class="py-2 px-4 border">Siti Rahmawati</td>
+                                <td class="py-2 px-4 border">Supervisor</td>
+                                <td class="py-2 px-4 border">Pemasaran</td>
+                                <td class="py-2 px-4 border">Rp 8.000.000</td>
+                                <td class="py-2 px-4 border">Aktif</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">3</td>
+                                <td class="py-2 px-4 border">Budi Santoso</td>
+                                <td class="py-2 px-4 border">Staff</td>
+                                <td class="py-2 px-4 border">Operasional</td>
+                                <td class="py-2 px-4 border">Rp 5.000.000</td>
+                                <td class="py-2 px-4 border">Non-Aktif</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Jabatan Page -->
+            <div id="jabatanPage" class="page p-6 hidden">
+                <div class="bg-blue-600 text-white p-6 rounded-lg shadow-md mb-6">
+                    <h1 class="text-2xl font-bold">Data Jabatan</h1>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white shadow-md rounded">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">No</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Nama Jabatan</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Deskripsi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 px-4 border">1</td>
+                                <td class="py-2 px-4 border">Manager</td>
+                                <td class="py-2 px-4 border">Bertanggung jawab atas pengelolaan tim dan strategi.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">2</td>
+                                <td class="py-2 px-4 border">Supervisor</td>
+                                <td class="py-2 px-4 border">Memantau dan mengawasi kinerja tim.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">3</td>
+                                <td class="py-2 px-4 border">Staff</td>
+                                <td class="py-2 px-4 border">Melaksanakan tugas sehari-hari sesuai arahan.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Divisi Page -->
+            <div id="divisiPage" class="page p-6 hidden">
+                <div class="bg-blue-600 text-white p-6 rounded-lg shadow-md mb-6">
+                    <h1 class="text-2xl font-bold">Data Divisi</h1>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white shadow-md rounded">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">No</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Nama Divisi</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Deskripsi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 px-4 border">1</td>
+                                <td class="py-2 px-4 border">Keuangan</td>
+                                <td class="py-2 px-4 border">Mengelola semua aspek keuangan perusahaan.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">2</td>
+                                <td class="py-2 px-4 border">Pemasaran</td>
+                                <td class="py-2 px-4 border">Bertanggung jawab atas strategi pemasaran produk.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">3</td>
+                                <td class="py-2 px-4 border">Operasional</td>
+                                <td class="py-2 px-4 border">Mengelola operasi sehari-hari perusahaan.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Absensi Page -->
+            <div id="absensiPage" class="page p-6 hidden">
+                <div class="bg-blue-600 text-white p-6 rounded-lg shadow-md mb-6">
+                    <h1 class="text-2xl font-bold">Data Absensi</h1>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white shadow-md rounded">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">No</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Nama</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Tanggal</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Example absensi data -->
+                            <tr>
+                                <td class="py-2 px-4 border">1</td>
+                                <td class="py-2 px-4 border">Andi Wijaya</td>
+                                <td class="py-2 px-4 border">01-11-2024</td>
+                                <td class="py-2 px-4 border">Hadir</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">2</td>
+                                <td class="py-2 px-4 border">Siti Rahmawati</td>
+                                <td class="py-2 px-4 border">01-11-2024</td>
+                                <td class="py-2 px-4 border">Hadir</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Izin Page -->
+            <div id="izinPage" class="page p-6 hidden">
+                <div class="bg-blue-600 text-white p-6 rounded-lg shadow-md mb-6">
+                    <h1 class="text-2xl font-bold">Data Izin</h1>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white shadow-md rounded">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">No</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Nama</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Tanggal</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Alasan</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 px-4 border">1</td>
+                                <td class="py-2 px-4 border">Budi Santoso</td>
+                                <td class="py-2 px-4 border">01-11-2024</td>
+                                <td class="py-2 px-4 border">Sakit</td>
+                                <td class="py-2 px-4 border">Disetujui</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Lembur Page -->
+            <div id="lemburPage" class="page p-6 hidden">
+                <div class="bg-blue-600 text-white p-6 rounded-lg shadow-md mb-6">
+                    <h1 class="text-2xl font-bold">Data Lembur</h1>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white shadow-md rounded">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">No</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Nama</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Tanggal</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Jam Lembur</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 px-4 border">1</td>
+                                <td class="py-2 px-4 border">Andi Wijaya</td>
+                                <td class="py-2 px-4 border">01-11-2024</td>
+                                <td class="py-2 px-4 border">2 Jam</td>
+                                <td class="py-2 px-4 border">Disetujui</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">2</td>
+                                <td class="py-2 px-4 border">Jamal</td>
+                                <td class="py-2 px-4 border">10-2-2024</td>
+                                <td class="py-2 px-4 border">3 Jam</td>
+                                <td class="py-2 px-4 border">Disetujui</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- PROFIL Page -->
+            <div id="form-container" class="hidden p-8 bg-gray-100">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-xl font-bold mb-4">Tambah Data Karyawan</h2>
+                    <form>
+                        <div class="mb-4">
+                            <label class="block text-gray-700">Nama Lengkap</label>
+                            <input class="w-full p-2 border border-gray-300 rounded mt-1" type="text"/>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700">Jabatan</label>
+                            <select class="w-full p-2 border border-gray-300 rounded mt-1">
+                                <option>-- Select --</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700">Email</label>
+                            <input class="w-full p-2 border border-gray-300 rounded mt-1" type="email"/>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700">No HP</label>
+                            <input class="w-full p-2 border border-gray-300 rounded mt-1" type="text"/>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700">Alamat</label>
+                            <textarea class="w-full p-2 border border-gray-300 rounded mt-1"></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700">Password</label>
+                            <input class="w-full p-2 border border-gray-300 rounded mt-1" type="password"/>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700">Divisi</label>
+                            <select class="w-full p-2 border border-gray-300 rounded mt-1">
+                                <option>-- Select --</option>
+                            </select>
+                        </div>
+                        <div class="flex justify-end">
+                            <button class="bg-green-500 text-white px-4 py-2 rounded mr-2" type="submit">Save</button>
+                            <button class="bg-red-500 text-white px-4 py-2 rounded" type="button">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
