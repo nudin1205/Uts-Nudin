@@ -301,30 +301,44 @@
                         <thead>
                             <tr>
                                 <th class="py-2 px-4 bg-blue-500 text-white font-semibold">No</th>
-                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Nama Jabatan</th>
-                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Deskripsi</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Kode Jabatan</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Jabatan</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="py-2 px-4 border">1</td>
+                                <td class="py-2 px-4 border">J001</td>
                                 <td class="py-2 px-4 border">Manager</td>
-                                <td class="py-2 px-4 border">Bertanggung jawab atas pengelolaan tim dan strategi.</td>
+                                <td class="py-2 px-4 border">
+                                    <button class="bg-green-500 text-white px-2 py-1 rounded">Edit</button>
+                                    <button class="bg-red-500 text-white px-2 py-1 rounded">Hapus</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="py-2 px-4 border">2</td>
+                                <td class="py-2 px-4 border">J002</td>
                                 <td class="py-2 px-4 border">Supervisor</td>
-                                <td class="py-2 px-4 border">Memantau dan mengawasi kinerja tim.</td>
+                                <td class="py-2 px-4 border">
+                                    <button class="bg-green-500 text-white px-2 py-1 rounded">Edit</button>
+                                    <button class="bg-red-500 text-white px-2 py-1 rounded">Hapus</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="py-2 px-4 border">3</td>
+                                <td class="py-2 px-4 border">J003</td>
                                 <td class="py-2 px-4 border">Staff</td>
-                                <td class="py-2 px-4 border">Melaksanakan tugas sehari-hari sesuai arahan.</td>
+                                <td class="py-2 px-4 border">
+                                    <button class="bg-green-500 text-white px-2 py-1 rounded">Edit</button>
+                                    <button class="bg-red-500 text-white px-2 py-1 rounded">Hapus</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+            
 
             <!-- Divisi Page -->
             <div id="divisiPage" class="page p-6 hidden">
@@ -336,30 +350,44 @@
                         <thead>
                             <tr>
                                 <th class="py-2 px-4 bg-blue-500 text-white font-semibold">No</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Kode Divisi</th>
                                 <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Nama Divisi</th>
-                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Deskripsi</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="py-2 px-4 border">1</td>
+                                <td class="py-2 px-4 border">D001</td>
                                 <td class="py-2 px-4 border">Keuangan</td>
-                                <td class="py-2 px-4 border">Mengelola semua aspek keuangan perusahaan.</td>
+                                <td class="py-2 px-4 border">
+                                    <button class="bg-green-500 text-white px-2 py-1 rounded">Edit</button>
+                                    <button class="bg-red-500 text-white px-2 py-1 rounded">Hapus</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="py-2 px-4 border">2</td>
+                                <td class="py-2 px-4 border">D002</td>
                                 <td class="py-2 px-4 border">Pemasaran</td>
-                                <td class="py-2 px-4 border">Bertanggung jawab atas strategi pemasaran produk.</td>
+                                <td class="py-2 px-4 border">
+                                    <button class="bg-green-500 text-white px-2 py-1 rounded">Edit</button>
+                                    <button class="bg-red-500 text-white px-2 py-1 rounded">Hapus</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="py-2 px-4 border">3</td>
+                                <td class="py-2 px-4 border">D003</td>
                                 <td class="py-2 px-4 border">Operasional</td>
-                                <td class="py-2 px-4 border">Mengelola operasi sehari-hari perusahaan.</td>
+                                <td class="py-2 px-4 border">
+                                    <button class="bg-green-500 text-white px-2 py-1 rounded">Edit</button>
+                                    <button class="bg-red-500 text-white px-2 py-1 rounded">Hapus</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+            
 
             <!-- Absensi Page -->
             <div id="absensiPage" class="page p-6 hidden">
@@ -370,25 +398,39 @@
                     <table class="min-w-full bg-white shadow-md rounded">
                         <thead>
                             <tr>
-                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">No</th>
-                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Nama</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">#</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Nama Karyawan</th>
                                 <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Tanggal</th>
-                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Status</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Lokasi Absen</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Jam Masuk</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Jam Keluar</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Example absensi data -->
                             <tr>
                                 <td class="py-2 px-4 border">1</td>
                                 <td class="py-2 px-4 border">Andi Wijaya</td>
                                 <td class="py-2 px-4 border">01-11-2024</td>
-                                <td class="py-2 px-4 border">Hadir</td>
+                                <td class="py-2 px-4 border">Kantor</td>
+                                <td class="py-2 px-4 border">08:00</td>
+                                <td class="py-2 px-4 border">17:00</td>
+                                <td class="py-2 px-4 border">
+                                    <button class="bg-green-500 text-white px-2 py-1 rounded">Edit</button>
+                                    <button class="bg-red-500 text-white px-2 py-1 rounded">Hapus</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="py-2 px-4 border">2</td>
                                 <td class="py-2 px-4 border">Siti Rahmawati</td>
                                 <td class="py-2 px-4 border">01-11-2024</td>
-                                <td class="py-2 px-4 border">Hadir</td>
+                                <td class="py-2 px-4 border">Kantor</td>
+                                <td class="py-2 px-4 border">08:15</td>
+                                <td class="py-2 px-4 border">17:05</td>
+                                <td class="py-2 px-4 border">
+                                    <button class="bg-green-500 text-white px-2 py-1 rounded">Edit</button>
+                                    <button class="bg-red-500 text-white px-2 py-1 rounded">Hapus</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -406,8 +448,10 @@
                             <tr>
                                 <th class="py-2 px-4 bg-blue-500 text-white font-semibold">No</th>
                                 <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Nama</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Izin</th>
                                 <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Tanggal</th>
-                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Alasan</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Jam</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Keterangan</th>
                                 <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Status</th>
                             </tr>
                         </thead>
@@ -415,15 +459,26 @@
                             <tr>
                                 <td class="py-2 px-4 border">1</td>
                                 <td class="py-2 px-4 border">Budi Santoso</td>
+                                <td class="py-2 px-4 border">Cuti</td>
                                 <td class="py-2 px-4 border">01-11-2024</td>
+                                <td class="py-2 px-4 border">09:00</td>
+                                <td class="py-2 px-4 border">Menghadiri acara keluarga</td>
+                                <td class="py-2 px-4 border">Disetujui</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border">2</td>
+                                <td class="py-2 px-4 border">Siti Rahmawati</td>
                                 <td class="py-2 px-4 border">Sakit</td>
+                                <td class="py-2 px-4 border">01-11-2024</td>
+                                <td class="py-2 px-4 border">N/A</td>
+                                <td class="py-2 px-4 border">Dokter merekomendasikan istirahat</td>
                                 <td class="py-2 px-4 border">Disetujui</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-
+            
             <!-- Lembur Page -->
             <div id="lemburPage" class="page p-6 hidden">
                 <div class="bg-blue-600 text-white p-6 rounded-lg shadow-md mb-6">
@@ -436,7 +491,8 @@
                                 <th class="py-2 px-4 bg-blue-500 text-white font-semibold">No</th>
                                 <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Nama</th>
                                 <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Tanggal</th>
-                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Jam Lembur</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Jam Lembur Mulai | Berakhir</th>
+                                <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Keperluan Lembur</th>
                                 <th class="py-2 px-4 bg-blue-500 text-white font-semibold">Status</th>
                             </tr>
                         </thead>
@@ -445,20 +501,22 @@
                                 <td class="py-2 px-4 border">1</td>
                                 <td class="py-2 px-4 border">Andi Wijaya</td>
                                 <td class="py-2 px-4 border">01-11-2024</td>
-                                <td class="py-2 px-4 border">2 Jam</td>
+                                <td class="py-2 px-4 border">17:00 | 19:00</td>
+                                <td class="py-2 px-4 border">Menyelesaikan laporan bulanan</td>
                                 <td class="py-2 px-4 border">Disetujui</td>
                             </tr>
                             <tr>
                                 <td class="py-2 px-4 border">2</td>
                                 <td class="py-2 px-4 border">Jamal</td>
-                                <td class="py-2 px-4 border">10-2-2024</td>
-                                <td class="py-2 px-4 border">3 Jam</td>
+                                <td class="py-2 px-4 border">10-02-2024</td>
+                                <td class="py-2 px-4 border">18:00 | 21:00</td>
+                                <td class="py-2 px-4 border">Persiapan presentasi</td>
                                 <td class="py-2 px-4 border">Disetujui</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </div>         
 
             <!-- Spil Gaji Page -->
             <div id="spilGajiPage" class="page p-6 hidden">
